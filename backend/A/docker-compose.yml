@@ -1,0 +1,48 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - db_volume:/var/lib/mysql
+    environment:
+      - MYSQL_PORT=3306
+      - MYSQL_ROOT_USER=root
+      - MYSQL_DATABASE=quiz
+      - MYSQL_ROOT_PASSWORD=QPCF94l
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_ROOT_USER --password=$$MYSQL_ROOT_PASSWORD
+      interval: 1s
+      retries: 60
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "9001:8000"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_ROOT_USER=root
+      - MYSQL_PORT=3306
+      - MYSQL_DATABASE=quiz
+      - MYSQL_ROOT_PASSWORD=QPCF94l
+    tty:
+      true
+    depends_on:
+      db:
+        condition: service_healthy
+  phpmyadmin:
+    container_name: pma
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db #mysqlサービス名を指定
+      - PMA_USER=root
+      - PMA_PASSWORD=QPCF94l
+    volumes:
+      - ./phpmyadmin/sessions:/sessions
+volumes:
+  db_volume:
