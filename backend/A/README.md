@@ -13,6 +13,16 @@ Response 成功時ステータスコード200で下記のレスポンスを返�
 {"message": "success"}
 ```
 
+## 一覧APIの作成
+Request
+GET /items
+
+Response
+成功時ステータスコード200で下記のレスポンスを返す
+```
+[{"name": "apple", "price": 200}]
+```
+
 # 操作方法
 git clone等でソースコードをローカル環境にダウンロードした後、.env.sampleファイルの`sample`の部分のみ消去する。
 
@@ -34,17 +44,6 @@ http://localhost:9001/api/items
 ## GET
 ```sh
 curl http://localhost:9001/api/items
-```
-
-
-## 一覧APIの作成
-Request
-GET /items
-
-Response
-成功時ステータスコード200で下記のレスポンスを返す
-```
-[{"name": "apple", "price": 200}]
 ```
 
 # 課題作成に使用した参考資料
