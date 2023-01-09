@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - db_volume:/var/lib/mysql
+    env_file:
+      - ./.env
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_ROOT_USER --password=$$MYSQL_ROOT_PASSWORD
+      interval: 1s
+      retries: 60
+  web:
+    build: .
+    volumes:
+      - .:/app
+    env_file:
+      - ./.env
+    ports:
+      - 5173:5173
+      - 9001:8000
+    tty:
+      true
+    depends_on:
+      db:
+        condition: service_healthy
+  phpmyadmin:
+    container_name: pma
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    env_file:
+      - ./.env
+    volumes:
+      - ./phpmyadmin/sessions:/sessions
+volumes:
+  db_volume:
