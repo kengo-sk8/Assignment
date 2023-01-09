@@ -6,7 +6,9 @@ Django / Ruby on Rails / Laravelのどれかを使用して下記要件を満た
 - 投稿された文字列の一覧ページ(非ログイン済みユーザーも閲覧可能)
 
 # 操作方法
-dockercompose.ymlのあるディレクトリーに移動した後、下記のコマンドの順番で、ターミナルに入力する
+git clone等でソースコードをローカル環境にダウンロードした後、.env.sampleファイルのsampleの部分のみ消去す。
+
+dockercompose.ymlのあるディレクトリーに移動した後、下記のコマンドの順番で、ターミナルに入力する。
 
 ```sh
 $ docker compose build
@@ -14,7 +16,9 @@ $ docker compose up -d
 ```
 コンテナー立ち上がった後、下記のコマンド実行する
 ```sh
-docker exec　[コンテナー名] npm install && npm run dev && npm run build
+docker exec　[コンテナー名] npm install && npm run dev
+# cssが反映されない時は、下記のコマンド入力
+docker exec　[コンテナー名] npm run build
 
 
 # 上手くいかない場合は、下記のコマンド入力
@@ -22,7 +26,7 @@ $ docker exec -it [コンテナー名] /bin/bash
 # 　コンテナー名は、docker ps で確認する
 
 #　コンテナー内で入力する
-$ npm install && npm run dev && npm run build
+$ npm install && npm run dev
 
 # または、1つずつ入力を行う
 $ npm run install
