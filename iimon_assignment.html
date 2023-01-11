@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://d2p9dc5u8hbh89.cloudfront.net/002/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>problem</title>
+  
+</head>
+<body>
+<style>
+.main-wrapper {
+  margin: 0 auto;
+  max-width: 850px;
+  padding: 50px;
+}
+.code {
+  background-color: lightgray;
+  padding: 20px;
+}
+.tbl, .tbl th, .tbl td {
+  border-collapse: collapse;
+  border:1px solid lightgray;
+}
+.tbl th {
+  padding: 5px 5px 5px 7px;
+  text-align: left;
+}
+.tbl td {
+  padding: 5px 5px 5px 7px;
+}
+.image-pos {
+  margin: 0 auto;
+  display: block;
+}
+</style>
+  <div class="main-wrapper">
+    <section>
+      <h1>提出方法</h1>
+      <h2>ディレクトリ構成</h2>
+      <p>GitHubのpublicリポジトリ又はGistのprivateにて下記の様なディレクトリ構成にしてそれぞれのディレクトリ以下に回答を作成しURLを共有して下さい。</p>
+<pre class="code">frontend
+  |--A
+  |--B
+  |--C
+backend
+  |--A
+  |--B
+  |--C
+infra
+  |--A
+  |--B
+</pre>
+    </section>
+    <section>
+      <h1>フロントエンド</h1>
+      <h2>A</h2>
+      <img src="./iimon_task_files/a.png" alt="フロントエンドA問題" width="400px" class="image-pos">
+      <p>更新ボタンを押したらAPIで取得した文言に切り替えられる様にしてください。javascriptをそのまま使用してもjQueryを使用してもokです。文言を取得するAPIにはhttps://catfact.ninja/factを使用してください。</p>
+      <h2>B</h2>
+      <img src="./iimon_task_files/b.png" alt="フロントエンドB問題" width="536px" class="image-pos">
+      <ul>
+        <li>Vue.jsまたはReactまたはAngularをセットアップして追加とXを押して削除ができるアプリケーションを作成してください</li>
+        <li>指定されている様にスタイルを当てて下さい。</li>
+      </ul>
+      <h3>Bスタイル</h3>
+      <img src="./iimon_task_files/b_design.png" alt="フロントエンドB問題デザイン" width="539px" class="image-pos">
+      <h2>C</h2>
+      <img src="./iimon_task_files/c.png" alt="フロントエンドC問題" width="814px" class="image-pos">
+      <ul>
+        <li>VuexまたはReduxを使って左右を別コンポーネントで実装してください</li>
+        <li>右に移動ボタンで左側の一番下の要素を右側の一番下に移動、左に移動ボタンで右側の一番下の要素を左側の一番下に移動するように実装してください</li>
+        <li>指定されている様にスタイルを当てて下さい</li>
+      </ul>
+      <h3>Cスタイル</h3>
+      <img src="./iimon_task_files/c_design.png" alt="フロントエンドC問題デザイン" width="754px" class="image-pos">
+    </section>
+    <section>
+      <h1>サーバーサイド</h1>
+      <h2>環境起動方法</h2>
+<pre class="code">docker compose up
+</pre>
+      <p></p>
+      <h2>A</h2>
+      <p><a href="https://d2p9dc5u8hbh89.cloudfront.net/002/files/django.zip" download="django.zip">Django</a> / <a href="https://d2p9dc5u8hbh89.cloudfront.net/002/files/rails.zip" download="ror.zip">Ruby on Rails</a> / <a href="https://d2p9dc5u8hbh89.cloudfront.net/002/files/laravel.zip" download="laravel.zip">Laravel</a>のどれかを使用してPOST(application/json)で下記の様なRequest/Responseによりitemsテーブルに保存するAPIを作成してください。</p>
+      <p>使用したいフレームワークのリンクからコードをダウンロードしてそれを元に作成してください。</p>
+      <h3>登録API</h3>
+      <h4>Request</h4>
+      <p>POST /items</p>
+<pre class="code">{
+  "name": "apple",
+  "price": 200
+}</pre>
+      <h4>Response</h4>
+      <p>成功時ステータスコード200で下記のレスポンスを返す</p>
+<pre class="code">{
+  "message": "success"
+}</pre>
+      <h3>一覧API</h3>
+      <h4>Request</h4>
+      <p>GET /items</p>
+      <h4>Response</h4>
+      <p>成功時ステータスコード200で下記のレスポンスを返す</p>
+<pre class="code">[{
+  "name": "apple",
+  "price": 200
+}]</pre>
+      <h2>B</h2>
+      <p><a href="https://d2p9dc5u8hbh89.cloudfront.net/002/files/django.zip" download="django.zip">Django</a> / <a href="https://d2p9dc5u8hbh89.cloudfront.net/002/files/rails.zip" download="ror.zip">Ruby on Rails</a> / <a href="https://d2p9dc5u8hbh89.cloudfront.net/002/files/laravel.zip" download="laravel.zip">Laravel</a>のどれかを使用して下記要件を満たすwebアプリケーションを作成してください。</p>
+      <p>使用したいフレームワークのリンクからコードをダウンロードしてそれを元に作成してください。</p>
+      <ul>
+        <li>アカウントの新規作成/ログイン機能</li>
+        <li>文字列の投稿機能(ログイン済みユーザーのみ可能)</li>
+        <li>投稿された文字列の一覧ページ(非ログイン済みユーザーも閲覧可能)</li>
+      </ul>
+      <h2>C</h2>
+      <ul>
+        <li>下記の様に定義したテーブルがあります。ジャンルごとのitems.priceの平均値とジャンル名を取得したいと思っています</li>
+        <li>どの様なクエリを発行するべきでしょうか？理由もつけて回答してください</li>
+        <li>idカラム以外はインデックスを貼っていません。もし貼っておいた方が良いインデックスがあれば教えてください。こちらも理由をつけて回答してください</li>
+      </ul>
+      <h3>itemsテーブル</h3>
+      <table class="tbl">
+        <tbody><tr>
+          <th>カラム名</th>
+          <th>型</th>
+          <th>備考</th>
+        </tr><tr>
+        </tr><tr>
+          <td>id</td>
+          <td>int</td>
+          <td>primary keyとして設定済み</td>
+        </tr><tr>
+        </tr><tr>
+          <td>name</td>
+          <td>varchar(128)</td>
+          <td>apple / potato / coke などの文字列が入る</td>
+        </tr><tr>
+        </tr><tr>
+          <td>price</td>
+          <td>int</td>
+          <td>98 / 150 / 350 などの数値が入る</td>
+        </tr><tr>
+        </tr><tr>
+          <td>genre_id</td>
+          <td>int</td>
+          <td>genresテーブルのidを参照して紐づけている</td>
+        </tr><tr>
+      </tr></tbody></table>
+      <h3>genresテーブル</h3>
+      <table class="tbl">
+        <tbody><tr>
+          <th>カラム名</th>
+          <th>型</th>
+          <th>備考</th>
+        </tr><tr>
+        </tr><tr>
+          <td>id</td>
+          <td>int</td>
+          <td>primary keyとして設定済み</td>
+        </tr><tr>
+        </tr><tr>
+          <td>name</td>
+          <td>varchar(128)</td>
+          <td>fruit / vegetable / drink などの文字列が入る</td>
+        </tr><tr>
+      </tr></tbody></table>
+    </section>
+    <section>
+      <h1>インフラ</h1>
+      <h2>A</h2>
+      <p>ログインを伴うwebアプリケーションのインフラ構成図を作成してPNGファイル又はPDFファイルで提出してください。構成について補足する事があれば文章でも補足してください。</p>
+      <p>ファイルのアップロードはinfra-&gt;Aのディレクトリ以下にお願いします。</p>
+      <h2>B</h2>
+      <p>AWS / GCP / Azureのどれかにterraformを使ってオブジェクトストレージ(S3/Cloud Storage/Azure Blob Storage)にローカルのファイル(sample.txt)をアップロードする設定を書いてください。提出の際secret keyなどの情報は含まれない様にお願いします。</p>
+    </section>
+  </div>
+
+
+</body></html>
