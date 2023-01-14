@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .content {
+        padding: 1em;
+        border: solid;
+        border-color: black;
+        border-radius: 10px;
+        overflow: scroll;
+        margin: 20px;
+        width: 300px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="content">テスト</div>
+      <input id="button" type="button" value="更新" />
+    </div>
+  </body>
+
+  <script src="js/index.js"></script>
+</html>
