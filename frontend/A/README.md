@@ -6,6 +6,8 @@
 
 # 参考資料
 
-[jQuery が動かない原因と対処法をご紹介！](https://qumeru.com/magazine/601)
-[jQuery.getJSON()](https://api.jquery.com/jquery.getjson/)
-[jQuery の getJSON()でエラーをハンドリングする](https://www.koikikukan.com/archives/2012/12/11-005555.php)
+- [jQuery が動かない原因と対処法をご紹介！](https://qumeru.com/magazine/601)
+- [jQuery.getJSON()](https://api.jquery.com/jquery.getjson/)
+- [jQuery の getJSON()でエラーをハンドリングする](https://www.koikikukan.com/archives/2012/12/11-005555.php)
+- [外部の JS ファイルの処理を呼び出す - 外部 JS ファイルの読み込み (JavaScript プログラミング)](https://www.ipentec.com/document/javascript-link-external-javascript-js-file)
+- [【jQuery 入門】replace()で文字列を置換する方法まとめ！](https://www.sejuku.net/blog/31821)
