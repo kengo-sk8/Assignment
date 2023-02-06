@@ -1,0 +1,41 @@
+h3 {
+  text-align: center;
+  color: navy;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+  position: relative;
+  width: 300px;
+}
+
+.input-container .add-text {
+  position: absolute;
+  left: 0;
+  width: 230px;
+  height: 30px;
+  padding: 0;
+  border-color: navy;
+  border-width: 1px;
+}
+.input-container .add-btn {
+  position: absolute;
+  right: 0;
+  width: 52px;
+  height: 32px;
+  padding: 0;
+  text-align: center;
+  background: navy;
+  border-color: navy;
+  color: white;
+  border-width: 1px;
+}
+
+::placeholder {
+  padding-left: 10px;
+}
