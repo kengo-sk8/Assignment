@@ -14,30 +14,29 @@
       <div class="main">
         <div class="input-container">
           <input
+            v-model="text"
             class="add-text"
             type="text"
             id="name"
             name="name"
             required
-            minlength="1"
-            maxlength="8"
+            maxlength="10"
             placeholder="文字を入力して下さい"
           />
-          <button class="add-btn" type="button">追加</button>
+          <button class="add-btn" type="button" @click="submit">追加</button>
         </div>
 
-        <div class="list-container">
+        <div class="list-container" v-for="text in textList">
             <button class="delete-btn" type="submit">X</button>
-            <div class="text-content">
+            <div class="text-content" >
                 <ul>
                     <li>
-                        テスト
+                        {{ text.text }}
                     </li>
                 </ul>
             </div>
 
         </div>
-
 
       </div>
     </div>
@@ -47,16 +46,35 @@
 
       createApp({
         data() {
-          return {
-            message: "Vue.js(3系)で作るtodoアプリ",
-            counter: 0,
-          };
+            return {
+                message: "Vue.js(3系)で作るtodoアプリ",
+                text: '',
+                textList: [
+                    {id: 0, text: 'aaaa'},
+                    {id: 1, text: 'bbbb'},
+                ]
+            };
         },
-        mounted() {
-          setInterval(() => {
-            this.counter++;
-          }, 1000);
-        },
+        methods: {
+            submit() {
+                if (this.text === ""){
+                    return;
+                }
+                if (this.text.length > 10){
+                    return;
+                }
+                this.textList.push({
+                    text: this.newTodoText,
+                })
+
+                this.initialize()
+            },
+
+            // 初期化
+            initialize(){
+                this.text = ''
+            }
+        }
       }).mount("#app");
     </script>
   </body>

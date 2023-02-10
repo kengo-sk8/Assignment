@@ -12,21 +12,21 @@ h3 {
 
 .input-container {
   width: 300px;
+  margin-bottom: 40px;
 }
 
 .input-container .add-text {
-  width: 240px;
-  height: 30px;
-  padding: 0;
+  width: 230px;
+  height: 28px;
+  paddingt: 0, 5px;
   border-color: navy;
   border-width: 1px;
   float: left;
 }
 
 .input-container .add-btn {
-  width: 50px;
+  width: 52px;
   height: 32px;
-  padding: 0;
   text-align: center;
   background: navy;
   border-color: navy;
@@ -36,8 +36,8 @@ h3 {
 }
 
 .list-container {
-  margin-top: 40px;
   width: 300px;
+  margin-bottom: 5px;
 }
 
 .list-container .delete-btn {
@@ -76,5 +76,4 @@ h3 {
 ul {
   list-style: none;
   color: navy;
-  margin-bottom: 5px;
 }
