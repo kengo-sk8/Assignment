@@ -10,7 +10,7 @@
   </head>
   <body>
     <div id="app">
-      <h3>{{ message }}</h1>
+      <h3>{{ message }}</h3>
       <div class="main">
         <div class="input-container">
           <input
@@ -26,18 +26,20 @@
           <button class="add-btn" type="button" @click="submit">追加</button>
         </div>
 
-        <div class="list-container" v-for="text in textList">
-            <button class="delete-btn" type="submit">X</button>
-            <div class="text-content" >
-                <ul>
-                    <li>
-                        {{ text.text }}
-                    </li>
-                </ul>
-            </div>
-
+        <div
+          class="list-container"
+          v-for="(item, index) in textList"
+          :key="item.id"
+        >
+          <button class="delete-btn" type="button" @click="deleteItem(index)">
+            X
+          </button>
+          <div class="text-content">
+            <ul>
+              <li>{{ item.text }}</li>
+            </ul>
+          </div>
         </div>
-
       </div>
     </div>
 
@@ -46,35 +48,40 @@
 
       createApp({
         data() {
-            return {
-                message: "Vue.js(3系)で作るtodoアプリ",
-                text: '',
-                textList: [
-                    {id: 0, text: 'aaaa'},
-                    {id: 1, text: 'bbbb'},
-                ]
-            };
+          return {
+            message: "Vue.js(3系)で作るtodoアプリ",
+            text: "",
+            textList: [
+              { id: 0, text: "aaaa" },
+              { id: 1, text: "bbbb" },
+            ],
+          };
         },
         methods: {
-            submit() {
-                if (this.text === ""){
-                    return;
-                }
-                if (this.text.length > 10){
-                    return;
-                }
-                this.textList.push({
-                    text: this.newTodoText,
-                })
-
-                this.initialize()
-            },
-
-            // 初期化
-            initialize(){
-                this.text = ''
+          submit() {
+            if (this.text === "") {
+              return;
             }
-        }
+            if (this.text.length > 10) {
+              return;
+            }
+            this.textList.push({
+              text: this.newTodoText,
+              text: this.text,
+            });
+
+            this.initialize();
+          },
+
+          deleteItem(index) {
+            this.textList.splice(index, 1);
+          },
+
+          // 初期化
+          initialize() {
+            this.text = "";
+          },
+        },
       }).mount("#app");
     </script>
   </body>
